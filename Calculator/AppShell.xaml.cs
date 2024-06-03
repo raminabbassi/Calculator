@@ -10,9 +10,13 @@ namespace Calculator
 
         public AppShell()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             WeatherAsync();
+            Routing.RegisterRoute("mathquiz", typeof(MathQuizPage));
+            Routing.RegisterRoute("mainpage", typeof(MainPage));
+
         }
+
 
         private async Task WeatherAsync() // hanterar vilken bild som ska visas vid under 0 grader och 0 gradeer eller över
         {
@@ -37,6 +41,14 @@ namespace Calculator
                 return weatherData;
             }
         }
+        private async void OnMattequizButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("mathquiz");
+        }
+        private async void OnBackToCalculatorClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
+        }
 
         public class WeatherData
         {
@@ -47,5 +59,6 @@ namespace Calculator
         {
             public double Temp { get; set; }
         }
+
     }
 }

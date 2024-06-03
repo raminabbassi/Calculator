@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MathQuizPage">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Label Text="Välkommen till Mattequizet!" FontSize="Large" HorizontalOptions="Center" />
+            <CollectionView x:Name="QuestionsCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Question}" FontSize="Medium"/>
+                            <Entry Placeholder="Ditt svar" Text="{Binding Answer}" Keyboard="Numeric"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Kolla svar" Clicked="OnCheckAnswersClicked" />
+            <Button Text="starta om" Clicked="restart" Margin="5"/>
+            <Label x:Name="ResultLabel" FontSize="Medium" TextColor="Green" IsVisible="False"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

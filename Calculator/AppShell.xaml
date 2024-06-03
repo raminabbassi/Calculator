@@ -14,10 +14,18 @@
             <Label x:Name="temperatureLabel" FontSize="18" VerticalOptions="Center" TextColor="Turquoise"/>
         </StackLayout>
         
+
     </Shell.TitleView>
+    <TabBar>
+        <!-- Flik för Miniräknaren -->
+        <ShellContent Title="Calculator" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+
+        <!-- Flik för Mattequiz -->
+        <ShellContent Title="Math Quiz" ContentTemplate="{DataTemplate local:MathQuizPage}" Route="MathQuizPage" />
+    </TabBar>
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate local:MainPage}" 
         Route="MainPage" />
 
 </Shell>
